@@ -1,7 +1,9 @@
 const router = require("express").Router()
+const Film = require('../models/Film')
 
 
-router.get('/',(req,res)=>{
-    res.render('homepage.ejs')
+router.get('/', async (req,res)=>{
+    allFilm = await Film.find()
+    res.render('homepage.ejs', {allFilm: allFilm})
 })
 module.exports = router;

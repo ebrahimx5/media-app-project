@@ -10,5 +10,19 @@
 
     <h1>Welcome to my Website</h1>
 
+
+    <h2>All Films</h2>
+
+    <% allFilm.forEach((oneFilm)=>{%>
+        <p> Film name : <%= oneFilm.filmName %></p>
+        <p> Genre :<%= oneFilm.genre %></p>
+        <p> Age Rating : <%= oneFilm.ageRating %></p>
+        <p> Rating : <%= oneFilm.rating %></p>
+        <p> Review : <%= oneFilm.review %></p>
+        <br />
+        
+    
+    <% }) %>
+
 </body>
 </html>

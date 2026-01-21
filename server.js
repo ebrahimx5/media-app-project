@@ -10,6 +10,10 @@ const session = require('express-session');
 const isSignedIn = require("./middleware/is-signed-in.js");
 const passUserToView = require("./middleware/pass-user-to-view.js");
 const methodOverride = require('method-override')
+const userRoutes = require('./controllers/film.routes.js')
+const filmRoutes = require('./controllers/film.routes.js')
+
+
 
 app.use(express.static('public')) // my app will serve all static files from public folder
 app.use(express.urlencoded({ extended: false }));
@@ -29,7 +33,32 @@ app.use(passUserToView)
 
 
 
+const genres = [
+'Action',
 
+'Comedy',
+
+'Drama',
+
+'Fantasy',
+
+'Horror',
+
+'Mystery',
+
+'Romance',
+
+'Science Fiction',
+
+'Thriller',
+
+'Western',
+
+'Musical',
+
+'Animation',]
+
+const ageRating = ['G', 'PG', '13+', '15+', '18+']
 
 
 
@@ -65,6 +94,9 @@ connectToDB() // connect to database
 // Routes go here
 app.use('/auth',authController)
 app.use('/',indexController)
+app.use('/film',filmRoutes )
+app.use('/user', userRoutes)
+
 
 
 // PROTECTED ROUTES:

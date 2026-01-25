@@ -39,6 +39,7 @@ const ageRating = ['G', 'PG', '13+', '15+', '18+']
 })
 
 router.post('/create', async(req, res)=>{
+    req.body.userCard = req.session.user._id
     createdFilm = await Film.create(req.body)
     console.log(createdFilm)
     res.redirect('/film/create')

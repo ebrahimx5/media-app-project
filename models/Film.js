@@ -37,6 +37,12 @@ const filmsSchema = mongoose.Schema({
     type: String,
 
     required : true
+  },
+
+  userCard : {
+    type : mongoose.Schema.Types.ObjectId,
+    ref : "User"
+
   }
 
 })

@@ -3,7 +3,7 @@ const Film = require('../models/Film')
 
 
 router.get('/', async (req,res)=>{
-    allFilm = await Film.find()
+    allFilm = await Film.find().populate('userCard')
     res.render('homepage.ejs', {allFilm: allFilm})
 })
 module.exports = router;

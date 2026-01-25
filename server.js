@@ -94,8 +94,8 @@ connectToDB() // connect to database
 // Routes go here
 app.use('/auth',authController)
 app.use('/',indexController)
-app.use('/film',filmRoutes )
 app.use('/user', userRoutes)
+app.use('/film',filmRoutes )
 
 
 

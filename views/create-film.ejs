@@ -8,12 +8,13 @@
 </head>
 
 <body>
+    <%- include('navbar') %>
     <h1> add Film</h1>
 
     <form action="/film/create" method="post">
 
         <label for="filmName">Film Name</label>
-        <input id="filmName" name="filmName" type="text">
+        <input  id="filmName" name="filmName" type="text">
 
         <label for="genre"> Genre</label>
         <select name="genre" id="genre">
@@ -37,11 +38,14 @@
         <label for="review">Review</label>
         <input id="review" name="review" type="text">
 
-        <button> Confirm</button>
-
+        
+      
+        <button> Confirm </button>
 
     </form>
 
+    <button> <a href="/"> Return Home Page </a></button>
+   
 </body>
 
 </html>

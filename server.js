@@ -12,6 +12,7 @@ const passUserToView = require("./middleware/pass-user-to-view.js");
 const methodOverride = require('method-override')
 const userRoutes = require('./controllers/film.routes.js')
 const filmRoutes = require('./controllers/film.routes.js')
+const seriesRoutes = require('./controllers/series.routes.js')
 
 
 
@@ -28,39 +29,6 @@ app.use(
   })
 );
 app.use(passUserToView)
-
-
-
-
-
-const genres = [
-'Action',
-
-'Comedy',
-
-'Drama',
-
-'Fantasy',
-
-'Horror',
-
-'Mystery',
-
-'Romance',
-
-'Science Fiction',
-
-'Thriller',
-
-'Western',
-
-'Musical',
-
-'Animation',]
-
-const ageRating = ['G', 'PG', '13+', '15+', '18+']
-
-
 
 
 
@@ -96,16 +64,13 @@ app.use('/auth',authController)
 app.use('/',indexController)
 app.use('/user', userRoutes)
 app.use('/film',filmRoutes )
+app.use('/series', seriesRoutes)
 
 
 
 // PROTECTED ROUTES:
 app.use(isSignedIn)
 // Everything under the user NEEDS to be logged in to se
-
-
-
-
 
 
 

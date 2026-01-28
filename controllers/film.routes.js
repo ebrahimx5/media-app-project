@@ -82,12 +82,19 @@ router.get('/edit/:id', async (req, res) => {
 
 router.post('/edit/:id', async (req,res)=>{
 
-    editFilm = await Film.findByIdAndUpdate(req.params.id, req.body);
+    const editFilm = await Film.findByIdAndUpdate(req.params.id, req.body);
     console.log(editFilm)
     res.redirect('/')
 
 })
 
+
+router.post('/delete/:id', async (req,res)=>{
+
+    const deletedFilm = await Film.findByIdAndDelete(req.params.id)
+    res.redirect('/')
+
+})
 
 
 

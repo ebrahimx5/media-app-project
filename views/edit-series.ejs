@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1> Edit Film</h1>
+
+    <form action="/series/edit/<%= foundSeries._id%>" method="post">
+
+        <label for="seriesName"> Series name</label>
+        <input id="seriesName" name="seriesName" value="<%= foundSeries.seriesName%>" type="text">
+
+        <label for="genre">Genre</label>
+        <select name="genres" id="genres">
+
+            <% genres.forEach((oneGengre)=>{%>
+
+                <option <% if(oneGengre===foundSeries.genre) {%> selected <%}%> value="<%= oneGengre %>">
+                            <%= oneGengre %>
+                </option>
+                <% }) %>
+        </select>
+
+        <label for="ageRating">Age Rating</label>
+        <select name="ageRating" id="ageRating">
+            <% ageRating.forEach((oneRating)=>{%>
+
+                <option <% if(oneRating===foundSeries.ageRating) {%> selected <%}%> value="<%= oneRating %>"><%= oneRating
+                                %>
+                </option>
+
+                <% }) %>
+        </select>
+
+        <label for="rating">Rating</label>
+        <input value="<%= foundSeries.rating %>" id="rating" name="rating" type="number">
+
+        <label for="review">Review</label>
+        <input value="<%= foundSeries.review %>" id="review" name="review" type="text">
+
+        <button>Update</button>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

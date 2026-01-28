@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('navbar') %>
+        <h1> add series</h1>
+
+        <form action="/series/create" method="post">
+
+            <label for="seriesNAme">series Name</label>
+            <input id="seriesNAme" name="seriesName" type="text">
+
+            <label for="genre"> Genre</label>
+            <select name="genre" id="genre">
+                <% genres.forEach((oneGenre)=>{%>
+                    <option value="<%= oneGenre%>">
+                        <%= oneGenre%>
+                    </option>
+                    <% }) %>
+            </select>
+
+            <label for="ageRating"> Age Rating</label>
+            <select name="ageRating" id="ageRating">
+                <% ageRating.forEach((oneRating)=>{%>
+                    <option value="<%= oneRating %>">
+                        <%= oneRating %>
+                    </option>p
+                    <% }) %>
+            </select>
+
+
+            <label for="Rating">Rating</label>
+            <input id="Rating" name="rating" type="number" min="1" max="5">
+
+
+            <label for="review">Review</label>
+            <input id="review" name="review" type="text">
+
+
+
+            <button> Confirm </button>
+
+        </form>
+
+        <button> <a href="/"> Return Home Page </a></button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

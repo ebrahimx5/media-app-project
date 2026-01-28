@@ -12,13 +12,12 @@
 
         <h1>Welcome to my Website</h1>
 
-
         <h2>All Films</h2>
 
-        <% allFilm.forEach((oneFilm)=>{%>
+        <% allFilm.forEach((oneFilm)=> { %>
             <p> Film name : <%= oneFilm.filmName %>
             </p>
-            <p> Genre :<%= oneFilm.genre %>
+            <p> Genre : <%= oneFilm.genre %>
             </p>
             <p> Age Rating : <%= oneFilm.ageRating %>
             </p>
@@ -26,45 +25,49 @@
             </p>
             <p> Review : <%= oneFilm.review %>
             </p>
-            <p>Creator: <%= oneFilm.userCard.username %>
+            <p> Creator: <%= oneFilm.userCard.username %>
             </p>
             <br />
-            <button> <a href="/film/edit/<%= oneFilm._id %>">Edit</a></button>
-            <br />
 
-            <form action="/film/delete/<%=oneFilm._id %>" method="post">
+            <% if (user) { %>
+                <button><a href="/film/edit/<%= oneFilm._id %>">Edit</a></button>
+                <br />
+                <form action="/film/delete/<%= oneFilm._id %>" method="post">
+                    <button>Delete</button>
+                </form>
+                <% } %>
 
-                <button>delete</button>
-
-            </form>
-
-            <% }) %>
-
-                <hr>
-
-                <h2>Series</h2>
-                <% allSeries.forEach((oneSeries)=>{%>
-                    <p> Series name : <%= oneSeries.seriesName %>
-                    </p>
-                    <p> Genre :<%= oneSeries.genre %>
-                    </p>
-                    <p> Age Rating : <%= oneSeries.ageRating %>
-                    </p>
-                    <p> Rating : <%= oneSeries.rating %>
-                    </p>
-                    <p> Review : <%= oneSeries.review %>
-                    </p>
-                    <p>Creator: <%= oneSeries.userCard.username %>
-                    </p>
                     <br />
-                    <button> <a href="/series/edit/<%= oneSeries._id %>">Edit</a></button>
-                    <br />
+                    <% }) %>
 
-                    <!-- <form action="/film/delete/<%=oneSeries._id %>" method="post"> -->
+                        <hr>
 
-                    <button>delete</button>
+                        <h2>Series</h2>
+                        <% allSeries.forEach((oneSeries)=> { %>
+                            <p> Series name : <%= oneSeries.seriesName %>
+                            </p>
+                            <p> Genre : <%= oneSeries.genre %>
+                            </p>
+                            <p> Age Rating : <%= oneSeries.ageRating %>
+                            </p>
+                            <p> Rating : <%= oneSeries.rating %>
+                            </p>
+                            <p> Review : <%= oneSeries.review %>
+                            </p>
+                            <p> Creator: <%= oneSeries.userCard.username %>
+                            </p>
+                            <br />
 
-                    <%}) %>
+                            <% if (user) { %>
+                                <button><a href="/series/edit/<%= oneSeries._id %>">Edit</a></button>
+                                <br />
+                                <form action="/series/delete/<%= oneSeries._id %>" method="post">
+                                    <button>Delete</button>
+                                </form>
+                                <% } %>
+
+                                    <% }) %>
+
 </body>
 
 </html>

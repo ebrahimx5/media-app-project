@@ -62,16 +62,16 @@ connectToDB() // connect to database
 // Routes go here
 app.use('/auth',authController)
 app.use('/',indexController)
-app.use('/user', userRoutes)
-app.use('/film',filmRoutes )
-app.use('/series', seriesRoutes)
+
 
 
 
 // PROTECTED ROUTES:
 app.use(isSignedIn)
 // Everything under the user NEEDS to be logged in to se
-
+app.use('/user', userRoutes)
+app.use('/film',filmRoutes )
+app.use('/series', seriesRoutes)
 
 
 app.listen(3000,()=>{

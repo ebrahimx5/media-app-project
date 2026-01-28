@@ -31,8 +31,8 @@
         <select name="ageRating" id="ageRating">
             <% ageRating.forEach((oneRating)=>{%>
 
-                <option <% if(oneRating===foundSeries.ageRating) {%> selected <%}%> value="<%= oneRating %>"><%= oneRating
-                                %>
+                <option <% if(oneRating===foundSeries.ageRating) {%> selected <%}%> value="<%= oneRating %>"><%=
+                                oneRating %>
                 </option>
 
                 <% }) %>

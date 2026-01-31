@@ -10,7 +10,6 @@ const session = require('express-session');
 const isSignedIn = require("./middleware/is-signed-in.js");
 const passUserToView = require("./middleware/pass-user-to-view.js");
 const methodOverride = require('method-override')
-const userRoutes = require('./controllers/film.routes.js')
 const filmRoutes = require('./controllers/film.routes.js')
 const seriesRoutes = require('./controllers/series.routes.js')
 
@@ -64,13 +63,9 @@ connectToDB() // connect to database
 app.use('/auth',authController)
 app.use('/',indexController)
 
-
-
-
 // PROTECTED ROUTES:
 app.use(isSignedIn)
 // Everything under the user NEEDS to be logged in to se
-app.use('/user', userRoutes)
 app.use('/film',filmRoutes )
 app.use('/series', seriesRoutes)
 

@@ -35,38 +35,38 @@
                 <form action="/film/delete/<%= oneFilm._id %>" method="post">
                     <button>Delete</button>
                 </form>
-                <% } %>
+            <% } %>
 
                     <br />
-                    <% }) %>
+        <% }) %>
 
-                        <hr>
+        <hr>
 
-                        <h2>Series</h2>
-                        <% allSeries.forEach((oneSeries)=> { %>
-                            <p> Series name : <%= oneSeries.seriesName %>
-                            </p>
-                            <p> Genre : <%= oneSeries.genre %>
-                            </p>
-                            <p> Age Rating : <%= oneSeries.ageRating %>
-                            </p>
-                            <p> Rating : <%= oneSeries.rating %>
-                            </p>
-                            <p> Review : <%= oneSeries.review %>
-                            </p>
-                            <p> Creator: <%= oneSeries.userCard.username %>
-                            </p>
-                            <br />
+        <h2>Series</h2>
+        <% allSeries.forEach((oneSeries)=> { %>
+            <p> Series name : <%= oneSeries.seriesName %>
+            </p>
+            <p> Genre : <%= oneSeries.genre %>
+            </p>
+            <p> Age Rating : <%= oneSeries.ageRating %>
+            </p>
+            <p> Rating : <%= oneSeries.rating %>
+            </p>
+            <p> Review : <%= oneSeries.review %>
+            </p>
+            <p> Creator: <%= oneSeries.userCard.username %>
+            </p>
+            <br />
 
-                            <% if (user) { %>
-                                <button><a href="/series/edit/<%= oneSeries._id %>">Edit</a></button>
-                                <br />
-                                <form action="/series/delete/<%= oneSeries._id %>" method="post">
-                                    <button>Delete</button>
-                                </form>
-                                <% } %>
+            <% if (user) { %>
+                <button><a href="/series/edit/<%= oneSeries._id %>">Edit</a></button>
+                <br />
+                <form action="/series/delete/<%= oneSeries._id %>" method="post">
+                    <button>Delete</button>
+                </form>
+            <% } %>
 
-                                    <% }) %>
+<% }) %>
 
 </body>
 

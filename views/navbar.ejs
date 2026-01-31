@@ -1,14 +1,10 @@
-<div>
-    <% if (user){ %>
-        <a href="/auth/sign-out">Logout</a>
-        <a href="/"> Home Page </a>
-        <a href="/film/create"> Add Film</a>
-        <a href="/series/create"> Add series</a>
-
-        <% } else{ %>
-            <a href="/auth/sign-up">Sign up</a>
-            <a href="/auth/sign-in">Login</a>
-            <a href="/"> Home Page </a>
-
-            <% } %>
-</div>
+<% if (user) { %>
+    <a href="/">Home</a>
+    <a href="/film/create">Add Film</a>
+    <a href="/series/create">Add Series</a>
+    <a href="/auth/sign-out">Logout</a>
+<% } else { %>
+    <a href="/">Home</a>
+    <a href="/auth/sign-up">Sign Up</a>
+    <a href="/auth/sign-in">Login</a>
+<% } %>

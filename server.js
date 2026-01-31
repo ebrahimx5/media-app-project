@@ -70,6 +70,11 @@ app.use('/film',filmRoutes )
 app.use('/series', seriesRoutes)
 
 
+
+
+
+
+
 app.listen(3000,()=>{
     console.log('App is working')
 }) // Listen on Port 3000

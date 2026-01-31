@@ -3,50 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=devicSe-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Film</title>
     <link rel="stylesheet" href="./css/create-film.css">
 </head>
 
 <body>
     <%- include('navbar') %>
-    <h1> add Film</h1>
+    <h1>Add Film</h1>
 
     <form action="/film/create" method="post">
 
-        <label for="filmName">Film Name</label>
-        <input  id="filmName" name="filmName" type="text">
+        <label for="filmName"><b>Film Name</b></label>
+        <input id="filmName" name="filmName" type="text" placeholder="Enter film name">
 
-        <label for="genre"> Genre</label>
+        <label for="genre"><b>Genre</b></label>
         <select name="genre" id="genre">
-        <% genres.forEach((oneGenre)=>{%>
-            <option value="<%= oneGenre%>"><%= oneGenre%></option> 
-        <% }) %>    
+            <% genres.forEach((oneGenre)=>{ %>
+                <option value="<%= oneGenre%>"><%= oneGenre%></option> 
+            <% }) %>    
         </select>
 
-        <label for="ageRating"> Age Rating</label>
+        <label for="ageRating"><b>Age Rating</b></label>
         <select name="ageRating" id="ageRating">
-            <% ageRating.forEach((oneRating)=>{%>
-                <option value="<%= oneRating %>"><%= oneRating %></option>p
+            <% ageRating.forEach((oneRating)=>{ %>
+                <option value="<%= oneRating %>"><%= oneRating %></option>
             <% }) %>
         </select>
         
+        <label for="rating"><b>Rating</b></label>
+        <input id="rating" name="rating" type="number" min="1" max="5" placeholder="1 to 5">
 
-        <label for="Rating">Rating</label>
-        <input id="Rating" name="rating" type="number" min="1" max="5">
+        <label for="review"><b>Review</b></label>
+        <input id="review" name="review" type="text" placeholder="Write your review">
 
-
-        <label for="review">Review</label>
-        <input id="review" name="review" type="text">
-
-        
-      
-        <button> Confirm </button>
-
+        <button type="submit">Confirm</button>
     </form>
 
-    <button> <a href="/"> Return Home Page </a></button>
+    <a href="/">Return Home Page</a>
    
 </body>
-
 </html>

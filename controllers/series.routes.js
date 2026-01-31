@@ -53,4 +53,12 @@ router.post('/edit/:id', async (req,res)=>{
 
 })
 
+
+router.post('/delete/:id', async (req,res)=>{
+
+    const deletedSeries = await Series.findByIdAndDelete(req.params.id)
+    res.redirect('/')
+
+})
+
 module.exports = router

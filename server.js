@@ -33,7 +33,8 @@ app.use(passUserToView)
 
 
 
-async function connectToDB(){ //connection to the database
+async function connectToDB(){  //connection to the database
+    require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);
     try{
         await mongoose.connect(process.env.MONGODB_URI)
         console.log("Connected to Database")

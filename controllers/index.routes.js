@@ -21,4 +21,15 @@ router.get('/', async (req,res) => {
   }
 });
 
+router.get('/about', (req,res) =>{
+  res.render('about.ejs');
+});
+
+router.get('/services', (req,res) =>{
+  res.render('services.ejs');
+});
+
+
+
 module.exports = router;
+

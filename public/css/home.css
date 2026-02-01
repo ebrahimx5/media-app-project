@@ -189,6 +189,7 @@ footer {
     color: white;
     text-align:center; 
     padding: 40px 0 10px 0px;
+    
 } 
 
 
@@ -204,4 +205,18 @@ footer a:hover {
 footer p {
     margin: 15px 0;
 }
+
+.community-footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 40px 0 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 50px;
+
+
+}
+
 

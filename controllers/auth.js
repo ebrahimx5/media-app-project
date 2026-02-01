@@ -10,6 +10,11 @@ router.get("/sign-up", (req, res) => {
 });
 
 router.post("/sign-up", async (req, res) => {
+    // Make sure that the inputs are written
+    if (!req.body.username || !req.body.password || !req.body.confirmPassword) {
+    return res.send("Please fill in all fields.");
+  }
+
   const userInDatabase = await User.findOne({ username: req.body.username });
   if (userInDatabase) {
     return res.send("Username already taken.");
@@ -38,6 +43,12 @@ router.get("/sign-in", (req, res) => {
 
 
 router.post("/sign-in", async (req, res) => {
+    
+  // Make sure that the inputs are written
+    if (!req.body.username || !req.body.password) {
+    return res.send("Please fill in all fields.");
+  }
+
   // First, get the user from the database
   const userInDatabase = await User.findOne({ username: req.body.username });
   if (!userInDatabase) {

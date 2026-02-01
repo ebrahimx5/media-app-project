@@ -29,6 +29,18 @@ router.get('/services', (req,res) =>{
   res.render('services.ejs');
 });
 
+router.get('/community', async (_, res) => {
+  try {
+    const allFilm = await Film.find().populate('userCard');
+    const allSeries = await Series.find().populate('userCard');
+    res.render('community.ejs', { allFilm, allSeries });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error loading community page");
+  }
+});
+
+
 
 
 module.exports = router;

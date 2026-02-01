@@ -3,21 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/auth.css">
     <title>Sign In</title>
   </head>
   <body>
+    <div class="navbar-container">
     <%- include('../navbar') %>
-    <h1>Sign In</h1>
-    <form action="/auth/sign-in" method="POST">
-      <label for="username"><b>Username</b></label>
-      <input type="text" name="username" id="username" placeholder="Enter username" />
+    </div>
 
-      <label for="password"><b>Password</b></label>
-      <input type="password" name="password" id="password" placeholder="Enter password" />
+    <main class="auth-section">
+      <h1 class="auth-title">Sign In</h1>
+      <form action="/auth/sign-in" method="POST" class="auth-form">
+        <label for="username"><b>Username</b></label>
+        <input type="text" name="username" id="username" placeholder="Enter username" />
 
-      <button type="submit">Sign In</button>
-    </form>
+        <label for="password"><b>Password</b></label>
+        <input type="password" name="password" id="password" placeholder="Enter password" />
 
-    <p>Don't have an account? <a href="/auth/sign-up">Sign Up</a></p>
+        <button type="submit">Sign In</button>
+      </form>
+
+      <p class="auth-link">Don't have an account? <a href="/auth/sign-up">Sign Up</a></p>
+    </main>
   </body>
 </html>

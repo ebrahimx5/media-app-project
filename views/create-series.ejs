@@ -2,45 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Series</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Series</title>
+  <link rel="stylesheet" href="/css/create.css">
 </head>
 
 <body>
-
+  <div class="create-navbar">
     <%- include('navbar') %>
-    <h1>Add Series</h1>
+  </div>
 
-    <form action="/series/create" method="post">
+  <main class="film-section">
+    <h1 class="film-title">Add Series</h1>
 
-        <label for="seriesName"><b>Series Name</b></label>
-        <input id="seriesName" name="seriesName" type="text" placeholder="Enter series name">
+    <form action="/series/create" method="post" class="film-form">
+      <label for="seriesName"><b>Series Name</b></label>
+      <input id="seriesName" name="seriesName" type="text" placeholder="Enter series name" required>
 
-        <label for="genre"><b>Genre</b></label>
-        <select name="genre" id="genre">
-            <% genres.forEach((oneGenre)=>{ %>
-                <option value="<%= oneGenre %>"><%= oneGenre %></option>
-            <% }) %>
-        </select>
+      <label for="genre"><b>Genre</b></label>
+      <select name="genre" id="genre">
+        <% genres.forEach((oneGenre)=>{ %>
+          <option value="<%= oneGenre %>"><%= oneGenre %></option>
+        <% }) %>
+      </select>
 
-        <label for="ageRating"><b>Age Rating</b></label>
-        <select name="ageRating" id="ageRating">
-            <% ageRating.forEach((oneRating)=>{ %>
-                <option value="<%= oneRating %>"><%= oneRating %></option>
-            <% }) %>
-        </select>
+      <label for="ageRating"><b>Age Rating</b></label>
+      <select name="ageRating" id="ageRating">
+        <% ageRating.forEach((oneRating)=>{ %>
+          <option value="<%= oneRating %>"><%= oneRating %></option>
+        <% }) %>
+      </select>
 
-        <label for="Rating"><b>Rating</b></label>
-        <input id="Rating" name="rating" type="number" min="1" max="5" placeholder="1 to 5">
+      <label for="rating"><b>Rating</b></label>
+      <input id="rating" name="rating" type="number" min="1" max="5" placeholder="1 to 5" required>
 
-        <label for="review"><b>Review</b></label>
-        <input id="review" name="review" type="text" placeholder="Write your review">
+      <label for="review"><b>Review</b></label>
+      <input id="review" name="review" type="text" placeholder="Write your review" required>
 
-        <button>Confirm</button>
+      <button type="submit">Confirm</button>
     </form>
 
-    <a href="/">Return Home Page</a>
-
+    <p class="film-link"><a href="/">Return Home Page</a></p>
+  </main>
 </body>
 </html>

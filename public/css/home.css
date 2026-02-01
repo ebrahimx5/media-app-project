@@ -5,8 +5,6 @@
 }
 
 
-
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -61,16 +59,75 @@ main {
     margin: 0;
   min-height: 70vh;
 }
+
+.user-info {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.user-info h2 {
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.user-info p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 16px;
+}
+
+details {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+summary {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 2px solid #0e0303;
+  padding-bottom: 5px;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+summary::before {
+  content: "▶";
+  margin-right: 10px;
+  font-size: 18px;
+  color: #666;
+}
+
+details[open] summary::before {
+  content: "▼";
+  color: #666;
+}
+
+summary:hover {
+  color: #ff0000;
+}
+
 .cards-container {
  background-color:  #fff;
-
-
-    
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
   gap: 20px;
   padding: 20px;
 }
+
 
 .card {
   background-color: #fff;
@@ -215,7 +272,6 @@ footer p {
   bottom: 0;
   width: 100%;
   margin-top: 50px;
-
 
 }
 

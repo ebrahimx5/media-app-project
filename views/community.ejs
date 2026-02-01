@@ -18,37 +18,41 @@
     <div class="navbar-container"><%- include('navbar') %></div>
 
     <section>
-      <h2>Films</h2>
-      <div class="cards-container">
-        <% allFilm.forEach((oneFilm)=> { %>
-          <div class="card">
-            <h3><%= oneFilm.filmName %></h3>
-            <p><b>Genre:</b> <%= oneFilm.genre %></p>
-            <p><b>Age Rating:</b> <%= oneFilm.ageRating %></p>
-            <p><b>Rating:</b> <%= oneFilm.rating %></p>
-            <p><b>Review:</b> <%= oneFilm.review %></p>
-            <p><b>Creator:</b> <%= oneFilm.userCard.username %></p>
-          </div>
-        <% }) %>
-      </div>
+      <details>
+        <summary>Films</summary>
+        <div class="cards-container">
+          <% allFilm.sort(() => Math.random() - 0.5).forEach((oneFilm)=> { %>
+            <div class="card">
+              <h3><%= oneFilm.filmName %></h3>
+              <p><b>Genre:</b> <%= oneFilm.genre %></p>
+              <p><b>Age Rating:</b> <%= oneFilm.ageRating %></p>
+              <p><b>Rating:</b> <%= oneFilm.rating %></p>
+              <p><b>Review:</b> <%= oneFilm.review %></p>
+              <p><b>Creator:</b> <%= oneFilm.userCard.username %></p>
+            </div>
+          <% }) %>
+        </div>
+      </details>
     </section>
 
     <hr>
 
     <section>
-      <h2>Series</h2>
-      <div class="cards-container">
-        <% allSeries.forEach((oneSeries)=> { %>
-          <div class="card">
-            <h3><%= oneSeries.seriesName %></h3>
-            <p><b>Genre:</b> <%= oneSeries.genre %></p>
-            <p><b>Age Rating:</b> <%= oneSeries.ageRating %></p>
-            <p><b>Rating:</b> <%= oneSeries.rating %></p>
-            <p><b>Review:</b> <%= oneSeries.review %></p>
-            <p><b>Creator:</b> <%= oneSeries.userCard.username %></p>
-          </div>
-        <% }) %>
-      </div>
+      <details>
+        <summary>Series</summary>
+        <div class="cards-container">
+          <% allSeries.sort(() => Math.random() - 0.5).forEach((oneSeries)=> { %>
+            <div class="card">
+              <h3><%= oneSeries.seriesName %></h3>
+              <p><b>Genre:</b> <%= oneSeries.genre %></p>
+              <p><b>Age Rating:</b> <%= oneSeries.ageRating %></p>
+              <p><b>Rating:</b> <%= oneSeries.rating %></p>
+              <p><b>Review:</b> <%= oneSeries.review %></p>
+              <p><b>Creator:</b> <%= oneSeries.userCard.username %></p>
+            </div>
+          <% }) %>
+        </div>
+      </details>
     </section>
 
   </main>
@@ -59,7 +63,7 @@
       <a href="/services">Our Services</a> |  
       <a href="/contact">Contact</a>
     </p>
-    <p>© 2026 My Media App - All rights reserved</p>
+    <p>© 2026 MediaVault - All rights reserved</p>
     
   </footer>
 </body>

@@ -17,6 +17,16 @@
 
     <div class="navbar-container"><%- include('navbar') %></div>
 
+      <% if (username) { %>
+  <section class="user-info">
+    <h2>User Info</h2>
+    <p><b>Username:</b> <%= username %></p>
+    <p><b>Total Cards:</b> <%= totalCards %></p>
+    <p><b>Films:</b> <%= filmCount %></p>
+    <p><b>Series:</b> <%= seriesCount %></p>
+  </section>
+    <% } %>
+
 
     <section>
       <h2>Films</h2>
@@ -120,7 +130,7 @@
       <a href="/services">Our Services</a> | 
       <a href="/contact">Contact</a>
     </p>
-    <p>© 2026 My Media App - All rights reserved</p>
+    <p>© 2026 MediaVault - All rights reserved</p>
   </footer>
 </body>
 </html>

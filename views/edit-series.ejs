@@ -2,46 +2,52 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Series</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Series</title>
+  <link rel="stylesheet" href="/css/edit.css">
 </head>
 
 <body>
+  <div class="edit-navbar">
+    <%- include('navbar') %>
+  </div>
 
-    <h1>Edit Series</h1>
+  <main class="edit-section">
+    <h1 class="edit-title">Edit Series</h1>
 
-    <form action="/series/edit/<%= foundSeries._id %>" method="post">
+    <form action="/series/edit/<%= foundSeries._id %>" method="post" class="edit-form">
+      <label for="seriesName"><b>Series Name</b></label>
+      <input id="seriesName" name="seriesName" value="<%= foundSeries.seriesName %>" type="text" placeholder="Enter series name" required>
 
-        <label for="seriesName"><b>Series Name</b></label>
-        <input id="seriesName" name="seriesName" value="<%= foundSeries.seriesName %>" type="text" placeholder="Enter series name">
+      <label for="genre"><b>Genre</b></label>
+      <select name="genre" id="genre">
+        <% genres.forEach((oneGenre)=>{ %>
+          <option <% if(oneGenre === foundSeries.genre ) { %> selected <% } %> value="<%= oneGenre %>">
+            <%= oneGenre %>
+          </option>
+        <% }) %>
+      </select>
 
-        <label for="genre"><b>Genre</b></label>
-        <select name="genre" id="genre">
-            <% genres.forEach((oneGenre)=>{ %>
-                <option <% if(oneGenre === foundSeries.genre ) { %> selected <% } %> value="<%= oneGenre %>">
-                    <%= oneGenre %>
-                </option>
-            <% }) %>
-        </select>
+      <label for="ageRating"><b>Age Rating</b></label>
+      <select name="ageRating" id="ageRating">
+        <% ageRating.forEach((oneRating)=>{ %>
+          <option <% if(oneRating === foundSeries.ageRating ) { %> selected <% } %> value="<%= oneRating %>">
+            <%= oneRating %>
+          </option>
+        <% }) %>
+      </select>
 
-        <label for="ageRating"><b>Age Rating</b></label>
-        <select name="ageRating" id="ageRating">
-            <% ageRating.forEach((oneRating)=>{ %>
-                <option <% if(oneRating === foundSeries.ageRating ) { %> selected <% } %> value="<%= oneRating %>">
-                    <%= oneRating %>
-                </option>
-            <% }) %>
-        </select>
+      <label for="rating"><b>Rating</b></label>
+      <input value="<%= foundSeries.rating %>" id="rating" name="rating" type="number" min="1" max="5" placeholder="1 to 5" required>
 
-        <label for="rating"><b>Rating</b></label>
-        <input value="<%= foundSeries.rating %>" id="rating" name="rating" type="number" min="1" max="5" placeholder="1 to 5">
+      <label for="review"><b>Review</b></label>
+      <input value="<%= foundSeries.review %>" id="review" name="review" type="text" placeholder="Write your review" required>
 
-        <label for="review"><b>Review</b></label>
-        <input value="<%= foundSeries.review %>" id="review" name="review" type="text" placeholder="Write your review">
-
-        <button>Update</button>
+      <button type="submit">Update</button>
     </form>
 
+    <p class="edit-link"><a href="/">Return Home Page</a></p>
+  </main>
 </body>
 </html>

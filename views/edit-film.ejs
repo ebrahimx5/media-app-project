@@ -2,45 +2,52 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Film</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Film</title>
+  <link rel="stylesheet" href="/css/edit.css">
 </head>
 
 <body>
-    <h1>Edit Film</h1>
+  <div class="edit-navbar">
+    <%- include('navbar') %>
+  </div>
 
-    <form action="/film/edit/<%= foundFilm._id %>" method="post">
+  <main class="edit-section">
+    <h1 class="edit-title">Edit Film</h1>
 
-        <label for="filmName"><b>Film Name</b></label>
-        <input id="filmName" name="filmName" value="<%= foundFilm.filmName %>" type="text" placeholder="Enter film name">
+    <form action="/film/edit/<%= foundFilm._id %>" method="post" class="edit-form">
+      <label for="filmName"><b>Film Name</b></label>
+      <input id="filmName" name="filmName" value="<%= foundFilm.filmName %>" type="text" placeholder="Enter film name" required>
 
-        <label for="genre"><b>Genre</b></label>
-        <select name="genre" id="genre">
-            <% genres.forEach((oneGenre)=>{ %>
-                <option <% if(oneGenre === foundFilm.genre ) { %> selected <% } %> value="<%= oneGenre %>">
-                    <%= oneGenre %>
-                </option>
-            <% }) %>
-        </select>
+      <label for="genre"><b>Genre</b></label>
+      <select name="genre" id="genre">
+        <% genres.forEach((oneGenre)=>{ %>
+          <option <% if(oneGenre === foundFilm.genre ) { %> selected <% } %> value="<%= oneGenre %>">
+            <%= oneGenre %>
+          </option>
+        <% }) %>
+      </select>
 
-        <label for="ageRating"><b>Age Rating</b></label>
-        <select name="ageRating" id="ageRating">
-            <% ageRating.forEach((oneRating)=>{ %>
-                <option <% if(oneRating === foundFilm.ageRating ) { %> selected <% } %> value="<%= oneRating %>">
-                    <%= oneRating %>
-                </option>
-            <% }) %>
-        </select>
+      <label for="ageRating"><b>Age Rating</b></label>
+      <select name="ageRating" id="ageRating">
+        <% ageRating.forEach((oneRating)=>{ %>
+          <option <% if(oneRating === foundFilm.ageRating ) { %> selected <% } %> value="<%= oneRating %>">
+            <%= oneRating %>
+          </option>
+        <% }) %>
+      </select>
 
-        <label for="rating"><b>Rating</b></label>
-        <input value="<%= foundFilm.rating %>" id="rating" name="rating" type="number" min="1" max="5" placeholder="1 to 5">
+      <label for="rating"><b>Rating</b></label>
+      <input value="<%= foundFilm.rating %>" id="rating" name="rating" type="number" min="1" max="5" placeholder="1 to 5" required>
 
-        <label for="review"><b>Review</b></label>
-        <input value="<%= foundFilm.review %>" id="review" name="review" type="text" placeholder="Write your review">
+      <label for="review"><b>Review</b></label>
+      <input value="<%= foundFilm.review %>" id="review" name="review" type="text" placeholder="Write your review" required>
 
-        <button>Update</button>
+      <button type="submit">Update</button>
     </form>
 
+    <p class="edit-link"><a href="/">Return Home Page</a></p>
+  </main>
 </body>
 </html>

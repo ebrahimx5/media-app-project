@@ -2,45 +2,47 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Film</title>
-    <link rel="stylesheet" href="./css/create-film.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Film</title>
+  <link rel="stylesheet" href="/css/create.css">
 </head>
 
 <body>
-    <%- include('navbar') %>
-    <h1>Add Film</h1>
 
-    <form action="/film/create" method="post">
+  <div class="create-navbar"><%- include('navbar') %></div>
 
-        <label for="filmName"><b>Film Name</b></label>
-        <input id="filmName" name="filmName" type="text" placeholder="Enter film name">
+  <main class="film-section">
+    <h1 class="film-title">Add Film</h1>
 
-        <label for="genre"><b>Genre</b></label>
-        <select name="genre" id="genre">
-            <% genres.forEach((oneGenre)=>{ %>
-                <option value="<%= oneGenre%>"><%= oneGenre%></option> 
-            <% }) %>    
-        </select>
+    <form action="/film/create" method="post" class="film-form">
+      <label for="filmName"><b>Film Name</b></label>
+      <input id="filmName" name="filmName" type="text" placeholder="Enter film name" required>
 
-        <label for="ageRating"><b>Age Rating</b></label>
-        <select name="ageRating" id="ageRating">
-            <% ageRating.forEach((oneRating)=>{ %>
-                <option value="<%= oneRating %>"><%= oneRating %></option>
-            <% }) %>
-        </select>
-        
-        <label for="rating"><b>Rating</b></label>
-        <input id="rating" name="rating" type="number" min="1" max="5" placeholder="1 to 5">
+      <label for="genre"><b>Genre</b></label>
+      <select name="genre" id="genre">
+        <% genres.forEach((oneGenre)=>{ %>
+          <option value="<%= oneGenre%>"><%= oneGenre%></option>
+        <% }) %>
+      </select>
 
-        <label for="review"><b>Review</b></label>
-        <input id="review" name="review" type="text" placeholder="Write your review">
+      <label for="ageRating"><b>Age Rating</b></label>
+      <select name="ageRating" id="ageRating">
+        <% ageRating.forEach((oneRating)=>{ %>
+          <option value="<%= oneRating %>"><%= oneRating %></option>
+        <% }) %>
+      </select>
 
-        <button type="submit">Confirm</button>
+      <label for="rating"><b>Rating</b></label>
+      <input id="rating" name="rating" type="number" min="1" max="5" placeholder="1 to 5" required>
+
+      <label for="review"><b>Review</b></label>
+      <input id="review" name="review" type="text" placeholder="Write your review" required>
+
+      <button type="submit">Confirm</button>
     </form>
 
-    <a href="/">Return Home Page</a>
-   
+    <p class="film-link"><a href="/">Return Home Page</a></p>
+  </main>
 </body>
 </html>
